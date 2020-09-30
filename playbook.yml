@@ -1,0 +1,9 @@
+---
+
+- name: ansible-role-secure-apache
+  hosts: localhost
+  connection: local
+  become: yes
+  
+  roles:
+    - ansible-role-secure-apache

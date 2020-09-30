@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Antonio Paya Gonzalez
+  description: ansible-role-secure-apache
+  company: Universidad de Oviedo
+
+  license: MIT
+
+  min_ansible_version: 1.2
+
+  galaxy_tags:
+    - Apache
+    - Ubuntu
+    - CIS
+    - hardering
+    - security
+    - Ubuntu18.04
+
+dependencies: []

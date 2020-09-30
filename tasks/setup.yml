@@ -1,0 +1,10 @@
+---
+# SETUP TASKS
+
+- name: "SETUP - Install lynis"
+  apt:
+    name: lynis
+    state: present
+  update_cache: yes
+  tags:
+      - lynis

@@ -1,0 +1,5 @@
+---
+# tasks file for for ansible-role-secure-apache
+
+- import_tasks: "setup.yml"
+  become: yes
