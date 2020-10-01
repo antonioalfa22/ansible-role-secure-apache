@@ -1,10 +1,13 @@
 ---
 # SETUP TASKS
 
-- name: "SETUP - Install lynis"
+- name: "SETUP - Install apache2"
   apt:
-    name: lynis
+    name: apache2
     state: present
   update_cache: yes
-  tags:
-      - lynis
+
+- name: Add index page
+  copy:
+    src: "templates/index.html"
+    dest: "/var/www/html/index.html"
