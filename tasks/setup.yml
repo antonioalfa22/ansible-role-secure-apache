@@ -1,13 +1,15 @@
 ---
 # SETUP TASKS
 
-- name: "SETUP - Install apache2"
-  apt:
-    name: apache2
-    state: present
-  update_cache: yes
+- name: Install prerequisites
+  apt: name={{ item }} update_cache=yes state=latest force_apt_get=yes
+  loop: [ 'aptitude' ]
 
-- name: Add index page
-  copy:
-    src: "templates/index.html"
-    dest: "/var/www/html/index.html"
+- name: Install Apache
+  apt: name=apache2 update_cache=yes state=latest
+
+- name: "UFW - Allow HTTP on port 80"
+  ufw:
+    rule: allow
+    port: "80"
+    proto: tcp
